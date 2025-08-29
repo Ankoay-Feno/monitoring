@@ -1,0 +1,15 @@
+# alertmanager.yml
+global:
+  smtp_from: 'alertmanager@votre-domaine.com'
+
+route:
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: 'webhook'
+
+receivers:
+- name: 'webhook'
+  webhook_configs:
+  - url: 'http://localhost:9093/-/receive'
