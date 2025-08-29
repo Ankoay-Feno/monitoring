@@ -6,7 +6,6 @@ from werkzeug.middleware.dispatcher import DispatcherMiddleware
 app = Flask(__name__)
 
 # Métriques Prometheus
-REQUEST_COUNT = Counter('http_requests_total', 'Total HTTP Requests')
 CPU_USAGE = Gauge('cpu_usage_percent', 'CPU Usage Percentage')
 MEMORY_USAGE = Gauge('memory_usage_percent', 'Memory Usage Percent')
 DISK_USAGE = Gauge('disk_usage_percent', 'Disk Usage Percent')
